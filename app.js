@@ -7,8 +7,17 @@ var prometheus = require("express-prometheus-middleware");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var summaryRouter = require("./routes/summary");
 
 var app = express();
+
+const { auth } = require('express-oauth2-jwt-bearer');
+
+const checkJwt = auth({
+  audience: 'https://uhm05fjqtb.execute-api.us-east-2.amazonaws.com/',
+  issuerBaseURL: `https://rinahq.com/`,
+});
+
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -31,6 +40,7 @@ app.use(
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/summary", summaryRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
