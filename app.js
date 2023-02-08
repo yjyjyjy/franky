@@ -13,7 +13,7 @@ var app = express();
 
 const { auth } = require('express-oauth2-jwt-bearer');
 
-const checkJwt = auth({
+export const checkJwt = auth({
   audience: 'https://uhm05fjqtb.execute-api.us-east-2.amazonaws.com/',
   issuerBaseURL: `https://rinahq.com/`,
 });
