@@ -1,10 +1,12 @@
 var express = require('express');
-const { checkJwt } = require('../app');
+// const { checkJwt } = require('../app');
 var router = express.Router();
 
 /* GET summary. */
-router.get('/', checkJwt, function (req, res, next) {
-  res.json({ message: 'respond with some summary' });
+router.get('/', function (req, res, next) {
+  setTimeout(() => {
+    res.json({ message: 'respond with some summary' })
+  }, 60000 * 5)
 });
 
 

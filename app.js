@@ -11,12 +11,12 @@ var summaryRouter = require("./routes/summary");
 
 var app = express();
 
-const { auth } = require('express-oauth2-jwt-bearer');
+// const { auth } = require('express-oauth2-jwt-bearer');
 
-export const checkJwt = auth({
-  audience: 'https://uhm05fjqtb.execute-api.us-east-2.amazonaws.com/',
-  issuerBaseURL: `https://rinahq.com/`,
-});
+// export const checkJwt = auth({
+//   audience: 'https://uhm05fjqtb.execute-api.us-east-2.amazonaws.com/',
+//   issuerBaseURL: `https://rinahq.com/`,
+// });
 
 
 // view engine setup
